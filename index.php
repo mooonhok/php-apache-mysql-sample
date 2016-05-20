@@ -28,6 +28,10 @@ $contacts = $db->all();
             height: 100%;
             color: #666;
             display: table;
+            background-image: url("img/bg.jpg");
+            filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+                -moz-background-size:100% 100%;
+                    background-size:100% 100%;
         }
 
         .container {
