@@ -12,12 +12,23 @@ if ($_GET['delete']) {
 }
 
 $contacts = $db->all();
+$contact = $db->fetch_row("*","where name='hank1'");
+if(!$contact)
+    {
+        
+        echo "false";
+    }
+    //如果已经绑定（误取消重新关注员工）
+    else
+    {
+        print_r($contact);        
+    }
 ?>
 
 <html>
 <head>
     <title>PHP-Apache-Mysql-Sample 示例 - DaoCloud</title>
-
+    <META http-equiv="content-type" content="text/html; charset=utf-8"> 
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -28,10 +39,7 @@ $contacts = $db->all();
             height: 100%;
             color: #666;
             display: table;
-            background-image: url("img/bg.jpg");
-            filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
-                -moz-background-size:100% 100%;
-                    background-size:100% 100%;
+            
         }
 
         .container {
