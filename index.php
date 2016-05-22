@@ -16,7 +16,7 @@ $contact = $db->fetch_row("*","where name='hank1'");
 if(!$contact)
     {
         
-        echo "false";
+        echo "version 1.2";
     }
     //如果已经绑定（误取消重新关注员工）
     else
