@@ -127,7 +127,7 @@ if (!empty($postStr)){
                       $phone = substr(strtolower($form_Content),2,strlen($form_Content));
                       //$arr = array('phone'=> $phone);
                       $db->update_phone($phone,$fromUsername);
-                      $resultStr = sprintf($textTpl, $fromUsername, $toUsername, time(), $msgType, "绑定通讯录成功！");
+                      $resultStr = sprintf($textTpl, $fromUsername, $toUsername, time(), $msgType, "绑定通讯录成功！".$fromUsername);
                       echo $resultStr;
                       exit;
                   }
