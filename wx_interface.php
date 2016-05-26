@@ -107,7 +107,8 @@ if (!empty($postStr)){
                       }
                       $msgType = "text";
                       $name = substr(strtolower($form_Content),2,strlen($form_Content));
-                      $db->insert($name,$fromUsername);
+                      $openid=$fromUsername;
+                      $db->insert($name,$openid);
                       $resultStr = sprintf($textTpl, $fromUsername, $toUsername, time(), $msgType, "请输入你的电话以ph开头，输入exit退出操作！");
                       echo $resultStr;
                       exit;
@@ -126,7 +127,8 @@ if (!empty($postStr)){
                       $msgType = "text";
                       $phone = substr(strtolower($form_Content),2,strlen($form_Content));
                       //$arr = array('phone'=> $phone);
-                      $db->update_phone($phone,$fromUsername);
+                      $openid=$fromUsername;
+                      $db->update_phone($phone,$openid);
                       $resultStr = sprintf($textTpl, $fromUsername, $toUsername, time(), $msgType, "绑定通讯录成功！".$fromUsername);
                       echo $resultStr;
                       exit;

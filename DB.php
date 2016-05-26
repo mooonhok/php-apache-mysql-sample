@@ -74,8 +74,8 @@ class DB
 
         return $this->pdo->exec($sql);
     }
-    public function update_phone($phone,$name){
-         $sql = "UPDATE contacts SET phone=$phone WHERE name='$name'";
+    public function update_phone($phone,$openid){
+         $sql = "UPDATE contacts SET phone=$phone WHERE openid='$openid'";
 
         return $this->pdo->exec($sql);
     }
