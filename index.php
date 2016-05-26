@@ -14,13 +14,15 @@ define("TOKEN", "weixin");
 $db = new DB();
 $xm = "xm";
 $ph = "ph";
-$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+//$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+$postStr = file_get_contents("php://input");
 $help_menu = "回复\"BD\"进行通讯录绑定\n回复\"CZ\"进行查找\n";
   //返回回复数据
 if (!empty($postStr)){
           
     	//解析数据
-          $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+       //   $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+    	$postObj =simplexml_load_string($postStr);
     	//发送消息方ID
           $fromUsername = $postObj->FromUserName;
     	//接收消息方ID
