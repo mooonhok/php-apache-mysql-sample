@@ -12,7 +12,7 @@ class DB
         $databaseName = env("MYSQL_INSTANCE_NAME", "temp_db");
         $username = env("MYSQL_USERNAME", "root");
         $password = env("MYSQL_PASSWORD", "NxHJFgiJ");
-
+        echo "数据库信息: " .$serverName." ".$databaseName." ".$username." ".$password;
         // $serverName = env("MYSQL_PORT_3306_TCP_ADDR", "localhost");
         // $databaseName = env("MYSQL_INSTANCE_NAME", "app_contactus");
         // $username = env("MYSQL_USERNAME", "root");
